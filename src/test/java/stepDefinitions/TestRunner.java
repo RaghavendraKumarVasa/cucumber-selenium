@@ -16,5 +16,5 @@ import io.cucumber.junit.Cucumber;
                 "junit:reports/CucumberReports/CucumberJunitReport.xml"}
 )
 
-public class testRunner {
+public class TestRunner {
 }
