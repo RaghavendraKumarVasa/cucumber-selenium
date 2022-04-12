@@ -5,8 +5,11 @@ import io.cucumber.java.en.*;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import pages.googlePage;
 
 import java.time.Duration;
@@ -20,17 +23,24 @@ public class steps {
     @BeforeAll
     public static void browserSetup() {
         configuration.getProperties();
+
         if(browser.equalsIgnoreCase("chrome")) {
+            ChromeOptions chromeOptions=new ChromeOptions();
+            chromeOptions.addArguments("headless");
             WebDriverManager.chromedriver().setup();
             driver = new ChromeDriver();
         }
         else if(browser.equalsIgnoreCase("firefox")) {
+            FirefoxOptions firefoxOptions=new FirefoxOptions();
+            firefoxOptions.addArguments("headless");
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
         }
         else if(browser.equalsIgnoreCase("edge")) {
+            EdgeOptions edgeOptions= new EdgeOptions();
+            edgeOptions.addArguments("headless");
             WebDriverManager.edgedriver().setup();
-            driver = new EdgeDriver();
+            driver = new EdgeDriver(edgeOptions);
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
