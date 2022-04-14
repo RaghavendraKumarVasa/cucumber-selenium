@@ -28,13 +28,13 @@ public class steps {
             ChromeOptions chromeOptions=new ChromeOptions();
             chromeOptions.addArguments("headless");
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            driver = new ChromeDriver(chromeOptions);
         }
         else if(browser.equalsIgnoreCase("firefox")) {
             FirefoxOptions firefoxOptions=new FirefoxOptions();
             firefoxOptions.addArguments("headless");
             WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
+            driver = new FirefoxDriver(firefoxOptions);
         }
         else if(browser.equalsIgnoreCase("edge")) {
             EdgeOptions edgeOptions= new EdgeOptions();
