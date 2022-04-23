@@ -6,7 +6,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features="src/test/resources/features", glue= {"stepDefinitions"},
         //tags="@test",
-        dryRun = false,
+        //dryRun = false,
         monochrome=true,
         plugin= {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
                 "pretty","html:reports/CucumberReports/CucumberHtmlReport.html",
