@@ -9,9 +9,9 @@ import io.cucumber.testng.CucumberOptions;
         //dryRun = false,
         monochrome = true,
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
-                "pretty", "html: CucumberHtmlReport.html"
-//                ,"json:reports/CucumberReports/CucumberJsonReport.json",
-//                "junit:reports/CucumberReports/CucumberJunitReport.xml"
+                "pretty", "html:reports/CucumberHtmlReport.html"
+                ,"json:reports/CucumberJsonReport.json",
+                "junit:reports/CucumberJunitReport.xml"
         }
 )
 
