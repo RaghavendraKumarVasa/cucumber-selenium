@@ -42,8 +42,8 @@ public class steps {
             WebDriverManager.edgedriver().setup();
             driver = new EdgeDriver(edgeOptions);
         }
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
         driver.manage().window().maximize();
 
     }
